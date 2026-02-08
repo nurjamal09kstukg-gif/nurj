@@ -3,121 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мое Портфолио</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Мое Портфолио | Nurjamal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --accent-color: #38bdf8;
+            --bg-color: #0b0e14;
+            --card-bg: #161b22;
+            --accent-color: #7928ca;
+            --accent-gradient: linear-gradient(135deg, #7928ca 0%, #ff0080 100%);
+            --text-main: #e6edf3;
+            --text-dim: #8b949e;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--accent-gradient);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--accent-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: -1px;
         }
 
-        p.subtitle {
-            margin-bottom: 50px;
-            opacity: 0.8;
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .work-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .work-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-container {
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gradient);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Сетка для видео */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(121, 40, 202, 0.2);
+            border-color: #7928ca;
+        }
+
+        .video-box {
+            position: relative;
+            padding-bottom: 56.25%;
             height: 0;
         }
 
-        .video-container iframe {
+        .video-box iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border: none;
         }
 
-        .work-info {
+        .card-content {
             padding: 20px;
         }
 
-        .work-info h2 {
+        .card-content h3 {
             margin: 0 0 10px 0;
-            font-size: 1.25rem;
+            color: var(--text-main);
         }
 
-        .tag {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
+        .card-content p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Секция Canva */
+        .canva-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #30363d;
+        }
+
+        .canva-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%;
+            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+            margin-top: 1.6em;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+
+        .canva-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <h1>Мои Работы</h1>
-    <p class="subtitle">Примеры моих проектов на YouTube</p>
+<header>
+    <h1>Портфолио: Nurjamal</h1>
+    <p>Разработчик Python & Аналитик данных</p>
+</header>
 
-    <div class="portfolio-grid">
-        <div class="work-card">
-            <div class="video-container">
+<div class="container">
+    
+    <h2 class="section-title">Видео-проекты</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="video-box">
                 <iframe src="https://www.youtube.com/embed/O1ThGoCa0HE" allowfullscreen></iframe>
             </div>
-            <div class="work-info">
-                <h2>Проект: food1</h2>
-                <p>Анализ и обработка изображений с использованием Python.</p>
-                <span class="tag">Python / OpenCV</span>
+            <div class="card-content">
+                <h3>Проект: food1</h3>
+                <p>Демонстрация работы скрипта по обработке изображений и морфологическому анализу объектов.</p>
             </div>
         </div>
 
-        <div class="work-card">
-            <div class="video-container">
+        <div class="card">
+            <div class="video-box">
                 <iframe src="https://www.youtube.com/embed/rNhHJYa-ZAQ" allowfullscreen></iframe>
             </div>
-            <div class="work-info">
-                <h2>Проект: food2</h2>
-                <p>Визуализация результатов работы алгоритма в реальном времени.</p>
-                <span class="tag">Data Science</span>
+            <div class="card-content">
+                <h3>Проект: food2</h3>
+                <p>Визуализация выполнения кода в VS Code и отображение очищенного результата обработки данных.</p>
             </div>
         </div>
     </div>
+
+    <h2 class="section-title">Презентация в Canva</h2>
+    <div class="canva-section">
+        <div class="canva-container">
+            <iframe loading="lazy" src="https://www.canva.com/design/DAG_P5jEw8I/OFQWQsspljdObYwbXvAWlA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+            </iframe>
+        </div>
+        <div style="text-align: center; margin-top: 15px;">
+            <p style="color: var(--text-dim);">Интерактивный просмотр моей презентации</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Сделано с помощью GitHub Pages
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое Портфолио</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        p.subtitle {
+            margin-bottom: 50px;
+            opacity: 0.8;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-info h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Мои Работы</h1>
+    <p class="subtitle">Примеры моих проектов на YouTube</p>
+
+    <div class="portfolio-grid">
+        <div class="work-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/O1ThGoCa0HE" allowfullscreen></iframe>
+            </div>
+            <div class="work-info">
+                <h2>Проект: food1</h2>
+                <p>Анализ и обработка изображений с использованием Python.</p>
+                <span class="tag">Python / OpenCV</span>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/rNhHJYa-ZAQ" allowfullscreen></iframe>
+            </div>
+            <div class="work-info">
+                <h2>Проект: food2</h2>
+                <p>Визуализация результатов работы алгоритма в реальном времени.</p>
+                <span class="tag">Data Science</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
